@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto Ordenação algotimo com array", "Projeto Ordenação algotimo com array\Projeto Ordenação algotimo com array.csproj", "{8634C5BA-1EFF-4750-A447-5C16C5BFA897}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8634C5BA-1EFF-4750-A447-5C16C5BFA897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8634C5BA-1EFF-4750-A447-5C16C5BFA897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8634C5BA-1EFF-4750-A447-5C16C5BFA897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8634C5BA-1EFF-4750-A447-5C16C5BFA897}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B09A913-E61F-4F45-9949-320BF77D91EA}
+	EndGlobalSection
+EndGlobal

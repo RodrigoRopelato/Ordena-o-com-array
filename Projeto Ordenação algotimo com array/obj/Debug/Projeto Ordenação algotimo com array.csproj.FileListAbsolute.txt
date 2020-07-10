@@ -1,0 +1,7 @@
+C:\Users\rodri\Desktop\Senai\Logica e programação\Projetos\Projeto Ordenação algotimo com array\Projeto Ordenação algotimo com array\bin\Debug\Projeto Ordenação algotimo com array.exe.config
+C:\Users\rodri\Desktop\Senai\Logica e programação\Projetos\Projeto Ordenação algotimo com array\Projeto Ordenação algotimo com array\bin\Debug\Projeto Ordenação algotimo com array.exe
+C:\Users\rodri\Desktop\Senai\Logica e programação\Projetos\Projeto Ordenação algotimo com array\Projeto Ordenação algotimo com array\bin\Debug\Projeto Ordenação algotimo com array.pdb
+C:\Users\rodri\Desktop\Senai\Logica e programação\Projetos\Projeto Ordenação algotimo com array\Projeto Ordenação algotimo com array\obj\Debug\Projeto Ordenação algotimo com array.csprojAssemblyReference.cache
+C:\Users\rodri\Desktop\Senai\Logica e programação\Projetos\Projeto Ordenação algotimo com array\Projeto Ordenação algotimo com array\obj\Debug\Projeto Ordenação algotimo com array.csproj.CoreCompileInputs.cache
+C:\Users\rodri\Desktop\Senai\Logica e programação\Projetos\Projeto Ordenação algotimo com array\Projeto Ordenação algotimo com array\obj\Debug\Projeto Ordenação algotimo com array.exe
+C:\Users\rodri\Desktop\Senai\Logica e programação\Projetos\Projeto Ordenação algotimo com array\Projeto Ordenação algotimo com array\obj\Debug\Projeto Ordenação algotimo com array.pdb
