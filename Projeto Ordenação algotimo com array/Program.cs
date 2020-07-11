@@ -23,8 +23,8 @@ namespace Projeto_Ordenação_algotimo_com_array
             bool continuar = true;
             string opcao;
             int qtdPosicoes = QuantidadeArray();
-            int[] numerosParaOrdenar = new int[qtdPosicoes];
-            int[] numerosOrdenados = new int[qtdPosicoes];
+            int[] numeros = new int[qtdPosicoes];
+            int[] Ordenados = new int[qtdPosicoes];
             Console.Clear();
             do
             {
@@ -32,23 +32,30 @@ namespace Projeto_Ordenação_algotimo_com_array
                 Menu();  
                 Console.Write("Opção: ");
                 opcao = Console.ReadLine();
-               
+                //numeros.CopyTo(Ordenados,0);
+                for (int p = 0; p < qtdPosicoes; p++)
+                {
+                    Ordenados[p] = numeros[p];
+                }
+                
                 switch (opcao)
                 {
                     case "1":
-                        numerosParaOrdenar = CadastrarNumerosArray(qtdPosicoes);
+                        numeros = CadastrarNumerosArray(qtdPosicoes);
                         break;
 
                     case "2":
-                        ExibirArray(numerosParaOrdenar);
+                        ExibirArray(numeros);
                         break;
 
                     case "3":
-                        OrdenarArrayInsertion(numerosOrdenados,numerosParaOrdenar);
+                        ExibirArray(numeros);
+                        OrdenarArrayInsertion(Ordenados);
                         break;
 
                     case "4":
-                        OrdenarArrayGnomeSort(numerosOrdenados, numerosParaOrdenar);
+                        ExibirArray(numeros);
+                        OrdenarArrayGnomeSort(Ordenados);
                         break;
 
                     case "5":
@@ -58,73 +65,47 @@ namespace Projeto_Ordenação_algotimo_com_array
                         Console.WriteLine("Opção Invalida");
                         break;
                 }
-                numerosOrdenados = numerosParaOrdenar;
+                
                 Console.ReadKey();
                 Console.Clear();
 
             } while (continuar);
         }
 
-        private static void OrdenarArrayGnomeSort(int[] numeros, int[] numerosParaOrdenar)
-        {
-            ExibirArray(numerosParaOrdenar);
 
-            GnomeSort(numeros);
-        }
-
-        #region Gnome Sort APRESENTAR NA PROXIMA AULA
+        //Gnome Sort APRESENTAR NA PROXIMA AULA
         //O Gnome Sort é um algoritmo com uma sequencia grande de trocas como o Bubble Sort, 
         //porem ele é similar ao Insertion Sort com a diferença de levar um elemento para sua posição correta.
         //ver link: https://pt.wikipedia.org/wiki/Gnome_sort
-        private static void GnomeSort(int[] vetor)
+        private static void OrdenarArrayGnomeSort(int[] vetor)
         {
-           
-           
-                int p = 0;
-                int aux;
-                while (p < (vetor.Length - 1))
+            Console.WriteLine("\nLista Ordenada Com Algoritimo GnomeSort");
+
+            int p = 0;
+            int aux;
+            while (p < (vetor.Length - 1))
+            {
+                if (vetor[p] > vetor[p + 1])
                 {
-                    if (vetor[p] > vetor[p + 1])
+                    aux = vetor[p];
+                    vetor[p] = vetor[p + 1];
+                    vetor[p + 1] = aux;
+                    if (p > 0)
                     {
-                        aux = vetor[p];
-                        vetor[p] = vetor[p + 1];
-                        vetor[p + 1] = aux;
-                        if (p > 0)
-                        {
-                            p -= 2;
-                        }
+                        p -= 2;
                     }
-                    p++;
                 }
+                p++;
+            }
+            for (int h = 0; h < vetor.Length; h++)
+            {
+                Console.Write("{0}, ", vetor[h]);
+            }
 
-                //return vetor;
-           
-
-            #endregion
         }
 
-        private static void OrdenarArrayInsertion(int[]numerosParaOrdenar, int[] numeros)
+        private static void OrdenarArrayInsertion(int[] vetor)
         {
-            
-            ExibirArray(numerosParaOrdenar);
-                     
-            InsertionSort(numeros);
-        }
-
-        private static int QuantidadeArray()
-        {
-            
-            Console.WriteLine("Para Iniciar a Aplicação");
-            Console.Write("Informe o tamanho do array que deseja criar:");
-            int qtdPosicoes = int.Parse(Console.ReadLine());
-
-            return qtdPosicoes;
-        }
-
-        private static void InsertionSort(int[]vetor)
-        {
-            
-            
             Console.WriteLine("\nLista Ordenada Com Algoritimo InsertionSort");
 
 
@@ -146,6 +127,17 @@ namespace Projeto_Ordenação_algotimo_com_array
             }
 
         }
+
+        private static int QuantidadeArray()
+        {
+            
+            Console.WriteLine("Para Iniciar a Aplicação");
+            Console.Write("Informe o tamanho do array que deseja criar:");
+            int qtdPosicoes = int.Parse(Console.ReadLine());
+
+            return qtdPosicoes;
+        }
+
 
         private static void ExibirArray(int[] lista)
         {
