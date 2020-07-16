@@ -23,7 +23,7 @@ namespace Projeto_Ordenação_algotimo_com_array
             bool continuar = true;
             string opcao;
             int qtdPosicoes = QuantidadeArray();
-            int[] numeros = new int[qtdPosicoes];
+            int[] numeros   = new int[qtdPosicoes];
             int[] Ordenados = new int[qtdPosicoes];
             Console.Clear();
             do
@@ -45,20 +45,24 @@ namespace Projeto_Ordenação_algotimo_com_array
                         break;
 
                     case "2":
-                        ExibirArray(numeros);
+                        numeros = CadastrarNumerosArrayAleatorio(qtdPosicoes);
                         break;
 
                     case "3":
                         ExibirArray(numeros);
-                        OrdenarArrayInsertion(Ordenados);
                         break;
 
                     case "4":
                         ExibirArray(numeros);
-                        OrdenarArrayGnomeSort(Ordenados);
+                        OrdenarArrayInsertion(Ordenados);
                         break;
 
                     case "5":
+                        ExibirArray(numeros);
+                        OrdenarArrayGnomeSort(Ordenados);
+                        break;
+
+                    case "6":
                         continuar = false;
                         break;
                     default:
@@ -152,9 +156,29 @@ namespace Projeto_Ordenação_algotimo_com_array
             Console.WriteLine();
             
         }
+        private static int[] CadastrarNumerosArrayAleatorio(int qtdPosicoes)
+        {
+            Console.Clear();
+
+            int[] numeros = new int[qtdPosicoes];
+            Random num = new Random ();
+                        
+            for (int i = 0; i < qtdPosicoes; i++)
+            {
+                numeros[i] = num.Next(50);
+            }
+            Console.WriteLine("Cadastro de Lista efetuado com sucesso!");
+            Console.WriteLine("Pressione ENTER para continuar");
+
+
+            return numeros;
+
+        }
 
         private static int[] CadastrarNumerosArray(int qtdPosicoes)
         {
+            Console.Clear();
+
             int[] numeros = new int[qtdPosicoes];
 
             Console.WriteLine("Entre com uma lista de {0} numeros, apertando enter ao fim de cada numero", qtdPosicoes);
@@ -175,10 +199,11 @@ namespace Projeto_Ordenação_algotimo_com_array
         {
             Console.WriteLine("Menu");
             Console.WriteLine("1-Cadastrar lista de numeros");
-            Console.WriteLine("2-Exibir Lista");
-            Console.WriteLine("3-Ordenar Lista Com Insertion Sort");
-            Console.WriteLine("4-Ordenar Lista Com Gnome Sort");
-            Console.WriteLine("5-Sair");
+            Console.WriteLine("2-Gerar lista com numeros aleatórios");
+            Console.WriteLine("3-Exibir Lista");
+            Console.WriteLine("4-Ordenar Lista Com Insertion Sort");
+            Console.WriteLine("5-Ordenar Lista Com Gnome Sort");
+            Console.WriteLine("6-Sair");
                         
         }
 
