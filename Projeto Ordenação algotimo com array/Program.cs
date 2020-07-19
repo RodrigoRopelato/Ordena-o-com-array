@@ -14,7 +14,6 @@ namespace Projeto_Ordenação_algotimo_com_array
         static void Main(string[] args)
         {
             IniciaAplicação();
-
         }
                
         private static void IniciaAplicação()
@@ -59,10 +58,15 @@ namespace Projeto_Ordenação_algotimo_com_array
 
                     case "5":
                         ExibirArray(numeros);
-                        OrdenarArrayGnomeSort(Ordenados);
+                        BubbleSort(Ordenados);
                         break;
 
                     case "6":
+                        ExibirArray(numeros);
+                        OrdenarArrayGnomeSort(Ordenados);
+                        break;
+
+                    case "7":
                         continuar = false;
                         break;
                     default:
@@ -77,7 +81,43 @@ namespace Projeto_Ordenação_algotimo_com_array
         }
 
 
-        //Gnome Sort APRESENTAR NA PROXIMA AULA
+        //O Bubble Sort é um algoritmo de ordenação mais simples que tem como característica percorrer 
+        //o vtor várias vezes e a cada passagem fazendo migrar para o topo (início do vetor) 
+        //o maior elemento da sequência.
+        //ver link: https://pt.wikipedia.org/wiki/Bubble_sort
+        public static void BubbleSort(int[] vetor)
+        {
+            Console.WriteLine("\nLista Ordenada Com Bubble Sort");
+
+            int tamanho = vetor.Length;
+            int comparacoes = 0;
+            int trocas = 0;
+
+            for (int i = tamanho - 1; i >= 1; i--)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    comparacoes++;
+                    if (vetor[j] > vetor[j + 1])
+                    {
+                        int aux = vetor[j];
+                        vetor[j] = vetor[j + 1];
+                        vetor[j + 1] = aux;
+                        trocas++;
+                    }
+                }
+            }
+            for (int h = 0; h < vetor.Length; h++)
+            {
+                Console.Write("{0}, ", vetor[h]);
+            }
+            Console.WriteLine("\n\nTrocas {0}", trocas);
+            Console.WriteLine("Comparações {0}", comparacoes);
+
+
+        }
+
+        //Gnome Sort 
         //O Gnome Sort é um algoritmo com uma sequencia grande de trocas como o Bubble Sort, 
         //porem ele é similar ao Insertion Sort com a diferença de levar um elemento para sua posição correta.
         //ver link: https://pt.wikipedia.org/wiki/Gnome_sort
@@ -87,10 +127,14 @@ namespace Projeto_Ordenação_algotimo_com_array
 
             int p = 0;
             int aux;
+            int comparacao = 0;
+            int trocas = 0;
             while (p < (vetor.Length - 1))
             {
+                comparacao += 1;
                 if (vetor[p] > vetor[p + 1])
                 {
+                    trocas += 1;
                     aux = vetor[p];
                     vetor[p] = vetor[p + 1];
                     vetor[p + 1] = aux;
@@ -105,7 +149,8 @@ namespace Projeto_Ordenação_algotimo_com_array
             {
                 Console.Write("{0}, ", vetor[h]);
             }
-
+            Console.WriteLine("\n\nTrocas {0}", trocas);
+            Console.WriteLine("Comparações {0}", comparacao);
         }
 
         private static void OrdenarArrayInsertion(int[] vetor)
@@ -114,14 +159,19 @@ namespace Projeto_Ordenação_algotimo_com_array
 
 
             int i, j, atual;
+            int compara = 0;
+            int troca = 0;
             for (i = 1; i < vetor.Length; i++)
             {
                 atual = vetor[i];
                 j = i;
+                compara += 1;
                 while ((j > 0) && (vetor[j - 1] > atual))
                 {
+                    troca += 1;
                     vetor[j] = vetor[j - 1];
                     j -= 1;
+                    compara += 1;
                 }
                 vetor[j] = atual;
             }
@@ -129,6 +179,8 @@ namespace Projeto_Ordenação_algotimo_com_array
             {
                 Console.Write("{0}, ", vetor[h]);
             }
+            Console.WriteLine("\n\nTrocas {0}", troca);
+            Console.WriteLine("Comparações {0}", compara);
 
         }
 
@@ -202,8 +254,9 @@ namespace Projeto_Ordenação_algotimo_com_array
             Console.WriteLine("2-Gerar lista com numeros aleatórios");
             Console.WriteLine("3-Exibir Lista");
             Console.WriteLine("4-Ordenar Lista Com Insertion Sort");
-            Console.WriteLine("5-Ordenar Lista Com Gnome Sort");
-            Console.WriteLine("6-Sair");
+            Console.WriteLine("5-Ordenar Lista Com BubbleSort");
+            Console.WriteLine("6-Ordenar Lista Com Gnome Sort");
+            Console.WriteLine("7-Sair");
                         
         }
 
